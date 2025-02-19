@@ -1,4 +1,5 @@
 //verificação de idade
+const prompt = resquire("prompt :sync")
 
 let idade1 ="15";
 let idade2 = "30";
@@ -17,27 +18,20 @@ if(idade3>=70){
 }
 
 //Tabuada
+var numero = 5;
 
-let Tabuada="5 ao 20";
-
-for (let i = 5; i <= 5; i++) {
-    console.log("Número:", i);
+for (let i = 0; i <= 20; i++) {
+    console.log(numero+"i"+xi(numero));
 }
 
 
 
 //verificacao de numeros pares 
 
-let pares ="0";
-let pares1 ="2";
-let pares2 ="4";
-let pares3 ="6";
-let pares4 ="8";
-let pares5 ="10";
-let pares6 ="12";
-let pares7 ="14";
-let pares8 ="16";
-let pares9 ="18";
-let pares10 ="20";
+for (let i = 0; i <= 20; i++) {
+    let resto
+    if (resto==0){
+console.log("nº+|+ /Par")
 
-
+    }
+}
