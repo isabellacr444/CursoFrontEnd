@@ -6,4 +6,12 @@ export class Cliente{
     this.id = id;
     this.nome = nome;
   }
+  //metodo de acesso (getter and setters)
+ // getId(): number{
+    //return this.id;
+  //}
+
+  //setId(id:number){
+    //this.id=id;
+  //}
 }
