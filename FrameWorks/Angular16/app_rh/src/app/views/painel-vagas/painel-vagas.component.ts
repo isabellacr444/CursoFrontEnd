@@ -72,7 +72,7 @@ export class PainelVagasComponent implements OnInit{
         this.vaga = new Vaga(0,"","","",0);
         this.listarVagas();//atualiza a tabela
         alert("Vaga Deletada com Sucesso");
-      }, (erro)=>{console.error("Ex")}
+      }, (erro)=>{console.error("Exception: ",erro);}
     );
   }
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"; //solicitações http (GET/POST/PUT/DELETE)
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs'; //classe que traduz a API <=> OBJ
 import { Vaga } from '../models/vaga.model';
 
 @Injectable({
@@ -15,23 +15,25 @@ export class VagaService {
 
   //métodos de Conexão
   //GET -> obtem a Lista de Vagas a partir da API
-  getVagas(): Observable<Vaga[]> {
+  //nomeDoMétodo()
+  getVagas(): Observable<Vaga[]> { //biblioteca da rxjs -> traduzir os dados da API <=> obj
     return this.http.get<Vaga[]>(this.apiUrl);
   }
-//POST ->Cadastra uma Vaga na API
- postVaga(vaga:Vaga) : Observable<Vaga[]>{
-  return this.http.post<Vaga[]>(this.apiUrl, vaga);
- }
 
- //PUT -> Atualizar Vaga Existente na API
- putVaga(id:any, vaga:Vaga) :Observable<Vaga[]>{
-  const apiUrlFinal =`${this.apiUrl}/${id}`
-  return this.http.put<Vaga[]>(apiUrlFinal,vaga);
- }
+  //POST -> Cadastra uma Vaga na API
+  postVaga(vaga: Vaga) : Observable<Vaga[]> {
+    return this.http.post<Vaga[]>(this.apiUrl, vaga);
+  }
 
- //DELETE -> Deleta vaga Existente na API
- deleteVaga(id:any): Observable<Vaga[]> {
-  const apiUrlFinal =`${this.apiUrl}/${id}`;
-  return this.http.delete<Vaga[]>(apiUrlFinal);
- }
+  // PUT -> Atualizar Vaga Existente na API
+  putVaga(id:any, vaga: Vaga) : Observable<Vaga[]> {
+    const apiUrlFinal = `${this.apiUrl}/${id}`;
+    return this.http.put<Vaga[]>(apiUrlFinal,vaga);
+  }
+
+  //DELETE -> Deleta vaga Existente na API
+  deleteVaga(id:any): Observable<Vaga[]> {
+    const apiUrlFinal = `${this.apiUrl}/${id}`;
+    return this.http.delete<Vaga[]>(apiUrlFinal);
+  }
 }
