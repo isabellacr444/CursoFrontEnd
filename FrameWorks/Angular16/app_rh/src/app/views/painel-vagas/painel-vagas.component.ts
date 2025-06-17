@@ -30,6 +30,7 @@ export class PainelVagasComponent implements OnInit{
             atributo.nome,
             atributo.foto,
             atributo.descricao,
+            
             atributo.salario
           );
         });
