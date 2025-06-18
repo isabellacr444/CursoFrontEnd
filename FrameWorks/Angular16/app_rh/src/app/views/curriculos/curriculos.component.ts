@@ -1,37 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Curriculo } from 'src/app/models/curriculo.model';
+import { CurriculosService } from 'src/app/services/curriculos.service';
 
 @Component({
   selector: 'app-curriculos',
   templateUrl: './curriculos.component.html',
-  styleUrls: ['./curriculos.component.scss']
+  styleUrls: ['./curriculos.component.scss'],
 })
-export class CurriculoComponent implements OnInit{
-//fazer os controller para Vagas
-  public curriculos: Curriculo[] = []; //armazena os dados da API
-  public curriculos: Curriculo = new this.Curriculo(0,"","","",0); //manipular no Formulário(inserir, modificar, deletar)
+export class CurriculosComponent implements OnInit {
+  public curriculos: Curriculo[] = [];
 
-  constructor(private _curriculoService: curriculosService){}
+  constructor(private _curriculosService: CurriculosService) {}
 
-  // método para rodar no inicio da tela
   ngOnInit(): void {
-    this.listarVagas();
+    this.listarCurriculos();
   }
-
-  //método para carregar todas as vagas do BD
-  listarVagas(){
-    this._vagaService.getVagas().subscribe(
-      //preencher um Map com as informações do backEnd
-      (e) => {
-        this.vagas = e.map((atributo) => {
-          return new Vaga(
-            atributo.id,
-            atributo.nome,
-            atributo.foto,
-            atributo.descricao,
-            atributo.salario
-          );
-        });
-      }
-    );
+  listarCurriculos() {
+    this._curriculosService.getCurriculos().subscribe((e) => {
+      this.curriculos = e.map((curriculo) => {
+        return Curriculo.fromMap(curriculo);
+      });
+    });
   }
+}

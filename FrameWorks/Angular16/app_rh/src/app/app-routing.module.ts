@@ -10,6 +10,7 @@ const routes: Routes = [ //rotas de Navegação da Página
   {path: "vagas", component: VagasComponent},
   {path: "curriculos", component: CurriculosComponent},
   {path: "painel-vagas", component: PainelVagasComponent},
+  
 
 ];
 
