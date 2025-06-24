@@ -7,7 +7,7 @@ import { Curriculo } from '../models/curriculo.model';
   providedIn: 'root'
 })
 export class CurriculoService {
-  private apiUrl = "http://localhost:3005/curriculos"; // endereço da Api
+  private apiUrl = "http://localhost:3015/curriculos"; // endereço da Api
   constructor(private http: HttpClient) {
     
   }
@@ -26,7 +26,7 @@ export class CurriculoService {
   //put
   // nomeDoMétodo(parâmeetros)
   putCurriculo(id: any, curriculo:Curriculo): Observable<Curriculo[]> { // coleção chave -> valor
-    // http://localhost:3001/vagas/XXXXX
+    // http://localhost:3015/vagas/XXXXX
     const url = `${this.apiUrl}/${id}`; //construir a url join(apiUrl+id)
     return this.http.put<Curriculo[]>(url, curriculo);
   }

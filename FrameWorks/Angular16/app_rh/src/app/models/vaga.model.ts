@@ -1,22 +1,6 @@
 //& arquivo responsável pela modelagem de dados para vagas
 
 export class Vaga {
-  //*   atributos :
-  //? private _id: number;
-  //? private _nome: string;
-  //? private _foto: string;
-  //? private _descricao: string;
-  //? private _salario: number;
-
-  //*   métodos
-  // construtor -> método da classe para criação de objetos
-  //? constructor(id:number, nome: string, foto:string, descricao:string, salario:number){
-  //?   this._id = id,
-  //?   this._nome = nome,
-  //?   this._foto = foto,
-  //?   this._descricao = descricao,
-  //?   this._salario = salario
-  //? }
 
   // JS/TS há uma forma de declarar os atributos e já fazer o construtor tudo de uma vez
   constructor(
